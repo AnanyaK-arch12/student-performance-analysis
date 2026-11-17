@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -173,3 +174,33 @@ print(high_performers)
 
 correlation=df["Study_Hours"].corr(df["Marks"])
 print("Correlation between study hours and marks:",correlation)
+=======
+import pandas as pd
+df=pd.DataFrame({
+    "Name":["anu","ajith","pranith","racchu","chammi"],
+    "Marks":[90,99,98,97,96],
+    "Attendance":[98,89,90,97,98]
+})
+print(df)
+
+total_students = df.shape[0]
+average_marks = df["Marks"].mean()
+average_attendance = df["Attendance"].mean()
+
+print("Total students:", total_students)
+print("Average marks:", average_marks)
+print("Average attendance:", average_attendance)
+
+df["Result"]=df["Marks"].apply(
+    lambda x:"excellent"if x>=80 
+    else "needs improvement"
+)
+print(df["Result"].value_counts())
+
+topper = df.loc[df["Marks"].idxmax(), "Name"]
+lowest = df.loc[df["Marks"].idxmin(), "Name"]
+
+
+print("Topper:", topper)
+print("Lowest scorer:", lowest)
+>>>>>>> 2ca3909b184d57679a994780824d207b20032d2b
